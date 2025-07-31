@@ -16,6 +16,7 @@ Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
     - '*.gemspec'
+    - 'lib/after_attached/railtie.rb'
 
 Style/Documentation:
   Enabled: false
