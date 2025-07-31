@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+## [0.1.1] - 2025-07-31
+
+### Fixed
+- Corrected GitHub URLs in gemspec and documentation
+
 ## [0.1.0] - 2025-07-31
 
 ### Added
