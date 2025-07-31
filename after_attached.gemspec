@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = "Attachment callbacks for Active Storage"
   spec.description = "Provides after_attached callbacks for Rails models with Active Storage attachments"
-  spec.homepage = "https://github.com/obiefernandez/after_attached"
+  spec.homepage = "https://github.com/obie/after_attached"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0.0"
 
