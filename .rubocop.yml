@@ -1,0 +1,34 @@
+AllCops:
+  TargetRubyVersion: 3.0
+  NewCops: enable
+  SuggestExtensions: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
+
+Layout/LineLength:
+  Max: 120
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - '*.gemspec'
+
+Style/Documentation:
+  Enabled: false
+
+# Allow array style in schema definitions
+Layout/SpaceInsideArrayLiteralBrackets:
+  Exclude:
+    - 'spec/spec_helper.rb'
+
+Style/SymbolArray:
+  Exclude:
+    - 'spec/spec_helper.rb'
+
+Lint/ConstantDefinitionInBlock:
+  Exclude:
+    - 'spec/**/*'

@@ -1,0 +1,1202 @@
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "documents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2025-07-31 17:56:44.728996', '2025-07-31 17:56:44.728998') RETURNING "key"[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "documents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2025-07-31 17:56:53.043689', '2025-07-31 17:56:53.043691') RETURNING "key"[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "documents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2025-07-31 17:57:36.412416', '2025-07-31 17:57:36.412418') RETURNING "key"[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "documents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2025-07-31 17:58:11.105121', '2025-07-31 17:58:11.105123') RETURNING "key"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (1.7ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (1.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "documents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2025-07-31 17:58:18.483418', '2025-07-31 17:58:18.483420') RETURNING "key"[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "documents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2025-07-31 17:58:33.801518', '2025-07-31 17:58:33.801519') RETURNING "key"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (1.9ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (1.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "documents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2025-07-31 17:59:16.567419', '2025-07-31 17:59:16.567421') RETURNING "key"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36m#<Class:0x000000033189c6d0> Create (3.3ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 17:59:16.642052"], ["updated_at", "2025-07-31 17:59:16.642052"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.4ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36m#<Class:0x0000000168d56240> Create (0.2ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 17:59:16.680871"], ["updated_at", "2025-07-31 17:59:16.680871"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36m#<Class:0x0000000103101f40> Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 17:59:16.700302"], ["updated_at", "2025-07-31 17:59:16.700302"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36m#<Class:0x00000003319b8ca8> Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 17:59:16.718387"], ["updated_at", "2025-07-31 17:59:16.718387"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36m#<Class:0x0000000331831100> Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 17:59:16.738213"], ["updated_at", "2025-07-31 17:59:16.738213"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "documents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2025-07-31 17:59:30.269384', '2025-07-31 17:59:30.269386') RETURNING "key"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36m#<Class:0x000000012599ddf8> Create (3.4ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 17:59:30.325786"], ["updated_at", "2025-07-31 17:59:30.325786"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.5ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36m#<Class:0x0000000141b3ece0> Create (0.2ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 17:59:30.368625"], ["updated_at", "2025-07-31 17:59:30.368625"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36m#<Class:0x0000000127ef03d0> Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 17:59:30.383898"], ["updated_at", "2025-07-31 17:59:30.383898"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36m#<Class:0x0000000127cd9380> Create (0.2ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 17:59:30.410314"], ["updated_at", "2025-07-31 17:59:30.410314"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36m#<Class:0x0000000141bb8ea0> Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 17:59:30.439653"], ["updated_at", "2025-07-31 17:59:30.439653"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "documents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2025-07-31 17:59:37.736344', '2025-07-31 17:59:37.736346') RETURNING "key"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36m#<Class:0x000000016fe65288> Create (1.9ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 17:59:37.786897"], ["updated_at", "2025-07-31 17:59:37.786897"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "documents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2025-07-31 17:59:54.812604', '2025-07-31 17:59:54.812606') RETURNING "key"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTestDocument Create (3.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 17:59:54.864527"], ["updated_at", "2025-07-31 17:59:54.864527"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "mixvejnm96vys7dtneqxqtplwo70"], ["filename", "test.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 12], ["checksum", "lHP90NiApDwht3eNNIchVw=="], ["created_at", "2025-07-31 17:59:54.931582"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "TestDocument"], ["record_id", 1], ["blob_id", 1], ["created_at", "2025-07-31 17:59:54.932480"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 17:59:54.934876"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.5ms) [0m[32mUploaded file to key: mixvejnm96vys7dtneqxqtplwo70 (checksum: lHP90NiApDwht3eNNIchVw==)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (1.0ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 1]]
+  [1m[36mTestDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 1]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 17:59:54.964895"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTestDocument Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 17:59:54.979649"], ["updated_at", "2025-07-31 17:59:54.979649"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "TestDocument"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "TestDocument"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "fpamnoe8ni37q0a2ew3mgcli0roc"], ["filename", "test.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 15], ["checksum", "xy0EDuH9zYvOCfyLbmxHlA=="], ["created_at", "2025-07-31 17:59:54.995415"]]
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "image"], ["record_type", "TestDocument"], ["record_id", 2], ["blob_id", 2], ["created_at", "2025-07-31 17:59:54.998042"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 17:59:55.000141"], ["id", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (1.6ms) [0m[32mUploaded file to key: fpamnoe8ni37q0a2ew3mgcli0roc (checksum: xy0EDuH9zYvOCfyLbmxHlA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 747fe805-d289-4464-a38a-e11d78cc49a3) to Test(default) with arguments: #<GlobalID:0x000000016885dd88 @uri=#<URI::GID gid://test/ActiveStorage::Blob/2>>
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTestDocument Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 17:59:55.053263"], ["updated_at", "2025-07-31 17:59:55.053263"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "TestDocument"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "TestDocument"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "fmdn50h4supn0rltrzp7fybkt2af"], ["filename", "test.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 15], ["checksum", "xy0EDuH9zYvOCfyLbmxHlA=="], ["created_at", "2025-07-31 17:59:55.070106"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "image"], ["record_type", "TestDocument"], ["record_id", 3], ["blob_id", 3], ["created_at", "2025-07-31 17:59:55.070971"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 17:59:55.071654"], ["id", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.3ms) [0m[32mUploaded file to key: fmdn50h4supn0rltrzp7fybkt2af (checksum: xy0EDuH9zYvOCfyLbmxHlA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 0cdf26f7-9a76-4219-9d4e-b45fbffd46ef) to Test(default) with arguments: #<GlobalID:0x0000000333191140 @uri=#<URI::GID gid://test/ActiveStorage::Blob/3>>
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTestDocument Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 17:59:55.081848"], ["updated_at", "2025-07-31 17:59:55.081848"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "zypupj5zzgnrcnb61ubojs50cm2y"], ["filename", "first.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 12], ["checksum", "lHP90NiApDwht3eNNIchVw=="], ["created_at", "2025-07-31 17:59:55.093176"]]
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "TestDocument"], ["record_id", 4], ["blob_id", 4], ["created_at", "2025-07-31 17:59:55.093646"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 17:59:55.094622"], ["id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.3ms) [0m[32mUploaded file to key: zypupj5zzgnrcnb61ubojs50cm2y (checksum: lHP90NiApDwht3eNNIchVw==)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (0.0ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 4]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 4]]
+  [1m[36mTestDocument Load (0.0ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 4]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 17:59:55.104945"], ["id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Attachment Destroy (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 4]]
+  [1m[36mActiveStorage::Blob Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "kwmhnx10t9fmx5l1lkr6ws8tf5u5"], ["filename", "second.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 11], ["checksum", "lsFcK7KSEZO/KQ34zYXiug=="], ["created_at", "2025-07-31 17:59:55.116957"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "TestDocument"], ["record_id", 4], ["blob_id", 5], ["created_at", "2025-07-31 17:59:55.118473"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 17:59:55.118613"], ["id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.4ms) [0m[32mUploaded file to key: kwmhnx10t9fmx5l1lkr6ws8tf5u5 (checksum: lsFcK7KSEZO/KQ34zYXiug==)[0m
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 45c84cab-4e89-422b-af69-df1fac77a17e) to Test(default) with arguments: #<GlobalID:0x0000000333619370 @uri=#<URI::GID gid://test/ActiveStorage::Blob/4>>
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (0.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 5]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 5]]
+  [1m[36mTestDocument Load (0.0ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 4]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 17:59:55.130660"], ["id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTestDocument Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 17:59:55.141375"], ["updated_at", "2025-07-31 17:59:55.141375"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "dmncarnneme3e0lybupw33keqe82"], ["filename", "test.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 12], ["checksum", "lHP90NiApDwht3eNNIchVw=="], ["created_at", "2025-07-31 17:59:55.164711"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "TestDocument"], ["record_id", 5], ["blob_id", 6], ["created_at", "2025-07-31 17:59:55.165932"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 17:59:55.166190"], ["id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.4ms) [0m[32mUploaded file to key: dmncarnneme3e0lybupw33keqe82 (checksum: lHP90NiApDwht3eNNIchVw==)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (0.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 6]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 6]]
+  [1m[36mTestDocument Load (0.0ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 5]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 17:59:55.174680"], ["id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "documents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2025-07-31 18:00:12.421405', '2025-07-31 18:00:12.421407') RETURNING "key"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTestDocument Create (2.8ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 18:00:12.478246"], ["updated_at", "2025-07-31 18:00:12.478246"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "tl45pqvzvp6rtyomgrq0sgrljsdi"], ["filename", "test.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 12], ["checksum", "lHP90NiApDwht3eNNIchVw=="], ["created_at", "2025-07-31 18:00:12.547951"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "TestDocument"], ["record_id", 1], ["blob_id", 1], ["created_at", "2025-07-31 18:00:12.549158"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:00:12.551574"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.4ms) [0m[32mUploaded file to key: tl45pqvzvp6rtyomgrq0sgrljsdi (checksum: lHP90NiApDwht3eNNIchVw==)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (1.0ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 1]]
+  [1m[36mTestDocument Load (0.0ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 1]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:00:12.593681"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTestDocument Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 18:00:12.615022"], ["updated_at", "2025-07-31 18:00:12.615022"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "TestDocument"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "TestDocument"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "ixitzk4rf10d3dmea6yehucrv2et"], ["filename", "test.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 15], ["checksum", "xy0EDuH9zYvOCfyLbmxHlA=="], ["created_at", "2025-07-31 18:00:12.630606"]]
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "image"], ["record_type", "TestDocument"], ["record_id", 2], ["blob_id", 2], ["created_at", "2025-07-31 18:00:12.632137"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:00:12.633616"], ["id", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.6ms) [0m[32mUploaded file to key: ixitzk4rf10d3dmea6yehucrv2et (checksum: xy0EDuH9zYvOCfyLbmxHlA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 884b723c-0961-4060-9e79-c83523767d02) to Test(default) with arguments: #<GlobalID:0x00000001690f4d70 @uri=#<URI::GID gid://test/ActiveStorage::Blob/2>>
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTestDocument Create (0.2ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 18:00:12.667852"], ["updated_at", "2025-07-31 18:00:12.667852"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "TestDocument"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "TestDocument"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "pv85ohbrkkp40suw7z96z1yu7ua5"], ["filename", "test.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 15], ["checksum", "xy0EDuH9zYvOCfyLbmxHlA=="], ["created_at", "2025-07-31 18:00:12.683929"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "image"], ["record_type", "TestDocument"], ["record_id", 3], ["blob_id", 3], ["created_at", "2025-07-31 18:00:12.684722"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:00:12.685399"], ["id", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.5ms) [0m[32mUploaded file to key: pv85ohbrkkp40suw7z96z1yu7ua5 (checksum: xy0EDuH9zYvOCfyLbmxHlA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 9c4dfbcd-962b-49c5-8304-368b9949d1a5) to Test(default) with arguments: #<GlobalID:0x0000000169915450 @uri=#<URI::GID gid://test/ActiveStorage::Blob/3>>
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTestDocument Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 18:00:12.695863"], ["updated_at", "2025-07-31 18:00:12.695863"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "2jp67h371x2xk4c4ezv9246aopwn"], ["filename", "first.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 12], ["checksum", "lHP90NiApDwht3eNNIchVw=="], ["created_at", "2025-07-31 18:00:12.707319"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "TestDocument"], ["record_id", 4], ["blob_id", 4], ["created_at", "2025-07-31 18:00:12.707690"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:00:12.708922"], ["id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.3ms) [0m[32mUploaded file to key: 2jp67h371x2xk4c4ezv9246aopwn (checksum: lHP90NiApDwht3eNNIchVw==)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (0.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 4]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 4]]
+  [1m[36mTestDocument Load (0.0ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 4]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:00:12.720934"], ["id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Attachment Destroy (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 4]]
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "tbqaraidf0rfk06rtuhhtiuvtonn"], ["filename", "second.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 11], ["checksum", "lsFcK7KSEZO/KQ34zYXiug=="], ["created_at", "2025-07-31 18:00:12.739558"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "TestDocument"], ["record_id", 4], ["blob_id", 5], ["created_at", "2025-07-31 18:00:12.741486"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:00:12.741691"], ["id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.3ms) [0m[32mUploaded file to key: tbqaraidf0rfk06rtuhhtiuvtonn (checksum: lsFcK7KSEZO/KQ34zYXiug==)[0m
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: ffaf540e-f0ed-4a35-8f64-2969f5d8bda4) to Test(default) with arguments: #<GlobalID:0x0000000136f7bac0 @uri=#<URI::GID gid://test/ActiveStorage::Blob/4>>
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (0.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 5]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 5]]
+  [1m[36mTestDocument Load (0.0ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 4]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:00:12.753696"], ["id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mMultiCallbackDocument Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Multi callback test"], ["created_at", "2025-07-31 18:00:12.765885"], ["updated_at", "2025-07-31 18:00:12.765885"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "MultiCallbackDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "MultiCallbackDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "41uh8qd9n97hioshojk94wi4puw1"], ["filename", "test.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 12], ["checksum", "lHP90NiApDwht3eNNIchVw=="], ["created_at", "2025-07-31 18:00:12.784035"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "MultiCallbackDocument"], ["record_id", 5], ["blob_id", 6], ["created_at", "2025-07-31 18:00:12.785225"]]
+  [1m[36mMultiCallbackDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:00:12.785481"], ["id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.3ms) [0m[32mUploaded file to key: 41uh8qd9n97hioshojk94wi4puw1 (checksum: lHP90NiApDwht3eNNIchVw==)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (0.0ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 6]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 6]]
+  [1m[36mMultiCallbackDocument Load (0.0ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 5]]
+  [1m[36mMultiCallbackDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:00:12.792867"], ["id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "documents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2025-07-31 18:00:45.473568', '2025-07-31 18:00:45.473570') RETURNING "key"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mMultiCallbackDocument Create (2.0ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Multi callback test"], ["created_at", "2025-07-31 18:00:45.539943"], ["updated_at", "2025-07-31 18:00:45.539943"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mActiveStorage::Attachment Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "MultiCallbackDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "MultiCallbackDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "dn3rvg0xb4eex3htjgi0imz6qyri"], ["filename", "test.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 12], ["checksum", "lHP90NiApDwht3eNNIchVw=="], ["created_at", "2025-07-31 18:00:45.606295"]]
+  [1m[36mActiveStorage::Attachment Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "MultiCallbackDocument"], ["record_id", 1], ["blob_id", 1], ["created_at", "2025-07-31 18:00:45.607570"]]
+  [1m[36mMultiCallbackDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:00:45.610368"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.7ms) [0m[32mUploaded file to key: dn3rvg0xb4eex3htjgi0imz6qyri (checksum: lHP90NiApDwht3eNNIchVw==)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (0.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 1]]
+  [1m[36mMultiCallbackDocument Load (0.0ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 1]]
+  [1m[36mMultiCallbackDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:00:45.641199"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+Running 2 callbacks for MultiCallbackDocument#file
+Running 2 callbacks for MultiCallbackDocument#file
+  [1m[36mActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments"[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "documents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2025-07-31 18:00:58.862294', '2025-07-31 18:00:58.862296') RETURNING "key"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTestDocument Create (3.2ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 18:00:58.912495"], ["updated_at", "2025-07-31 18:00:58.912495"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "yw62z0zokp9ruuh23hjuv6l1t7n8"], ["filename", "test.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 12], ["checksum", "lHP90NiApDwht3eNNIchVw=="], ["created_at", "2025-07-31 18:00:58.969573"]]
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "TestDocument"], ["record_id", 1], ["blob_id", 1], ["created_at", "2025-07-31 18:00:58.970498"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:00:58.973192"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.8ms) [0m[32mUploaded file to key: yw62z0zokp9ruuh23hjuv6l1t7n8 (checksum: lHP90NiApDwht3eNNIchVw==)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (1.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 1]]
+  [1m[36mTestDocument Load (0.0ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 1]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:00:59.002214"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+Running 1 callbacks for TestDocument#file
+Running 1 callbacks for TestDocument#file
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTestDocument Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 18:00:59.016219"], ["updated_at", "2025-07-31 18:00:59.016219"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "TestDocument"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "TestDocument"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "8wm6x2ofcv97y35pohalftahd9mu"], ["filename", "test.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 15], ["checksum", "xy0EDuH9zYvOCfyLbmxHlA=="], ["created_at", "2025-07-31 18:00:59.031532"]]
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "image"], ["record_type", "TestDocument"], ["record_id", 2], ["blob_id", 2], ["created_at", "2025-07-31 18:00:59.033080"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:00:59.034339"], ["id", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.8ms) [0m[32mUploaded file to key: 8wm6x2ofcv97y35pohalftahd9mu (checksum: xy0EDuH9zYvOCfyLbmxHlA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 96bc0850-b012-419b-8257-1e2762b8f3e4) to Test(default) with arguments: #<GlobalID:0x0000000132b18d38 @uri=#<URI::GID gid://test/ActiveStorage::Blob/2>>
+Running 1 callbacks for TestDocument#image
+Running 1 callbacks for TestDocument#image
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTestDocument Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 18:00:59.073473"], ["updated_at", "2025-07-31 18:00:59.073473"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "TestDocument"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "TestDocument"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "mc6cb1s16k6yb4b472rhm7fvv7h6"], ["filename", "test.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 15], ["checksum", "xy0EDuH9zYvOCfyLbmxHlA=="], ["created_at", "2025-07-31 18:00:59.090291"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "image"], ["record_type", "TestDocument"], ["record_id", 3], ["blob_id", 3], ["created_at", "2025-07-31 18:00:59.091156"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:00:59.091965"], ["id", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.4ms) [0m[32mUploaded file to key: mc6cb1s16k6yb4b472rhm7fvv7h6 (checksum: xy0EDuH9zYvOCfyLbmxHlA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: d72f9c1c-2348-4dc5-b448-be7e286b05e7) to Test(default) with arguments: #<GlobalID:0x0000000127e99d50 @uri=#<URI::GID gid://test/ActiveStorage::Blob/3>>
+Running 1 callbacks for TestDocument#image
+Running 1 callbacks for TestDocument#image
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTestDocument Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 18:00:59.103294"], ["updated_at", "2025-07-31 18:00:59.103294"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "2qmrvsnipk6w7efp4a7dfzobem3v"], ["filename", "first.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 12], ["checksum", "lHP90NiApDwht3eNNIchVw=="], ["created_at", "2025-07-31 18:00:59.115482"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "TestDocument"], ["record_id", 4], ["blob_id", 4], ["created_at", "2025-07-31 18:00:59.115834"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:00:59.116710"], ["id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.3ms) [0m[32mUploaded file to key: 2qmrvsnipk6w7efp4a7dfzobem3v (checksum: lHP90NiApDwht3eNNIchVw==)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (0.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 4]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 4]]
+  [1m[36mTestDocument Load (0.0ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 4]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:00:59.127107"], ["id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+Running 1 callbacks for TestDocument#file
+Running 1 callbacks for TestDocument#file
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Attachment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 4]]
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "dlgg1gg11k6jn5ppkeeqef3rzjj2"], ["filename", "second.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 11], ["checksum", "lsFcK7KSEZO/KQ34zYXiug=="], ["created_at", "2025-07-31 18:00:59.138863"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "TestDocument"], ["record_id", 4], ["blob_id", 5], ["created_at", "2025-07-31 18:00:59.140797"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:00:59.141031"], ["id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.4ms) [0m[32mUploaded file to key: dlgg1gg11k6jn5ppkeeqef3rzjj2 (checksum: lsFcK7KSEZO/KQ34zYXiug==)[0m
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 92cbccbc-166a-4e92-8337-a6bb72dfb7a8) to Test(default) with arguments: #<GlobalID:0x00000001329ddef0 @uri=#<URI::GID gid://test/ActiveStorage::Blob/4>>
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (0.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 5]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 5]]
+  [1m[36mTestDocument Load (0.0ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 4]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:00:59.152921"], ["id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+Running 1 callbacks for TestDocument#file
+Running 1 callbacks for TestDocument#file
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mMultiCallbackDocument Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Multi callback test"], ["created_at", "2025-07-31 18:00:59.165460"], ["updated_at", "2025-07-31 18:00:59.165460"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "MultiCallbackDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "MultiCallbackDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "79chgoenqxrfqvwne5t3gfi26ram"], ["filename", "test.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 12], ["checksum", "lHP90NiApDwht3eNNIchVw=="], ["created_at", "2025-07-31 18:00:59.184472"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "MultiCallbackDocument"], ["record_id", 5], ["blob_id", 6], ["created_at", "2025-07-31 18:00:59.185604"]]
+  [1m[36mMultiCallbackDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:00:59.185886"], ["id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.3ms) [0m[32mUploaded file to key: 79chgoenqxrfqvwne5t3gfi26ram (checksum: lHP90NiApDwht3eNNIchVw==)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (0.0ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 6]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 6]]
+  [1m[36mMultiCallbackDocument Load (0.0ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 5]]
+  [1m[36mMultiCallbackDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:00:59.193817"], ["id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+Running 2 callbacks for MultiCallbackDocument#file
+Running 2 callbacks for MultiCallbackDocument#file
+  [1m[36mActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "documents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2025-07-31 18:01:16.307547', '2025-07-31 18:01:16.307549') RETURNING "key"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mMultiCallbackDocument Create (1.9ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Multi callback test"], ["created_at", "2025-07-31 18:01:16.373897"], ["updated_at", "2025-07-31 18:01:16.373897"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mActiveStorage::Attachment Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "MultiCallbackDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "MultiCallbackDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "nggdrwo9dh41z2iab3skdixfhldt"], ["filename", "test.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 12], ["checksum", "lHP90NiApDwht3eNNIchVw=="], ["created_at", "2025-07-31 18:01:16.440452"]]
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "MultiCallbackDocument"], ["record_id", 1], ["blob_id", 1], ["created_at", "2025-07-31 18:01:16.441772"]]
+  [1m[36mMultiCallbackDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:01:16.444886"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.8ms) [0m[32mUploaded file to key: nggdrwo9dh41z2iab3skdixfhldt (checksum: lHP90NiApDwht3eNNIchVw==)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (0.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 1]]
+  [1m[36mMultiCallbackDocument Load (0.0ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 1]]
+  [1m[36mMultiCallbackDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:01:16.475950"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+Running 2 callbacks for MultiCallbackDocument#file
+Running 2 callbacks for MultiCallbackDocument#file
+  [1m[36mActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments"[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "documents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2025-07-31 18:01:31.316921', '2025-07-31 18:01:31.316923') RETURNING "key"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTestDocument Create (3.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 18:01:31.389534"], ["updated_at", "2025-07-31 18:01:31.389534"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "6in1ovr7xnds9ltwk6vo57bphcow"], ["filename", "test.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 12], ["checksum", "lHP90NiApDwht3eNNIchVw=="], ["created_at", "2025-07-31 18:01:31.454107"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "TestDocument"], ["record_id", 1], ["blob_id", 1], ["created_at", "2025-07-31 18:01:31.454920"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:01:31.457432"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.4ms) [0m[32mUploaded file to key: 6in1ovr7xnds9ltwk6vo57bphcow (checksum: lHP90NiApDwht3eNNIchVw==)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (1.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 1]]
+  [1m[36mTestDocument Load (0.0ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 1]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:01:31.487040"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+Running 1 callbacks for TestDocument#file
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTestDocument Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 18:01:31.501020"], ["updated_at", "2025-07-31 18:01:31.501020"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "TestDocument"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "TestDocument"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "pu6l8jnrzb7rsil81wfgedhhgsdf"], ["filename", "test.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 15], ["checksum", "xy0EDuH9zYvOCfyLbmxHlA=="], ["created_at", "2025-07-31 18:01:31.516673"]]
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "image"], ["record_type", "TestDocument"], ["record_id", 2], ["blob_id", 2], ["created_at", "2025-07-31 18:01:31.518387"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:01:31.519856"], ["id", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.6ms) [0m[32mUploaded file to key: pu6l8jnrzb7rsil81wfgedhhgsdf (checksum: xy0EDuH9zYvOCfyLbmxHlA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: e28a7a5f-5456-47f5-9943-c6c840bbe2c3) to Test(default) with arguments: #<GlobalID:0x000000013e990220 @uri=#<URI::GID gid://test/ActiveStorage::Blob/2>>
+Running 1 callbacks for TestDocument#image
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTestDocument Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 18:01:31.551903"], ["updated_at", "2025-07-31 18:01:31.551903"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "TestDocument"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "TestDocument"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "7pa3xqoljnbwuf455jy6g4mojxpe"], ["filename", "test.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 15], ["checksum", "xy0EDuH9zYvOCfyLbmxHlA=="], ["created_at", "2025-07-31 18:01:31.569590"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "image"], ["record_type", "TestDocument"], ["record_id", 3], ["blob_id", 3], ["created_at", "2025-07-31 18:01:31.570663"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:01:31.571417"], ["id", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.3ms) [0m[32mUploaded file to key: 7pa3xqoljnbwuf455jy6g4mojxpe (checksum: xy0EDuH9zYvOCfyLbmxHlA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 9e9e699e-ace4-4fba-b4a5-8efdb09b4a5f) to Test(default) with arguments: #<GlobalID:0x000000013ec79e78 @uri=#<URI::GID gid://test/ActiveStorage::Blob/3>>
+Running 1 callbacks for TestDocument#image
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTestDocument Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 18:01:31.581537"], ["updated_at", "2025-07-31 18:01:31.581537"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "4zti5ij17ma510b5l4eb7mpab63p"], ["filename", "first.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 12], ["checksum", "lHP90NiApDwht3eNNIchVw=="], ["created_at", "2025-07-31 18:01:31.592264"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "TestDocument"], ["record_id", 4], ["blob_id", 4], ["created_at", "2025-07-31 18:01:31.592548"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:01:31.593374"], ["id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.3ms) [0m[32mUploaded file to key: 4zti5ij17ma510b5l4eb7mpab63p (checksum: lHP90NiApDwht3eNNIchVw==)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (0.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 4]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 4]]
+  [1m[36mTestDocument Load (0.0ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 4]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:01:31.604445"], ["id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+Running 1 callbacks for TestDocument#file
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Attachment Destroy (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 4]]
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "fx54xyyitygsyiicelqlyeyh8fzv"], ["filename", "second.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 11], ["checksum", "lsFcK7KSEZO/KQ34zYXiug=="], ["created_at", "2025-07-31 18:01:31.621806"]]
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "TestDocument"], ["record_id", 4], ["blob_id", 5], ["created_at", "2025-07-31 18:01:31.623634"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:01:31.623943"], ["id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.4ms) [0m[32mUploaded file to key: fx54xyyitygsyiicelqlyeyh8fzv (checksum: lsFcK7KSEZO/KQ34zYXiug==)[0m
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: aae62555-5f24-4feb-93f0-6c6317e91b05) to Test(default) with arguments: #<GlobalID:0x000000013e4ddbd8 @uri=#<URI::GID gid://test/ActiveStorage::Blob/4>>
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (0.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 5]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 5]]
+  [1m[36mTestDocument Load (0.0ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 4]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:01:31.635854"], ["id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+Running 1 callbacks for TestDocument#file
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mMultiCallbackDocument Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Multi callback test"], ["created_at", "2025-07-31 18:01:31.648344"], ["updated_at", "2025-07-31 18:01:31.648344"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "MultiCallbackDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "MultiCallbackDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "if1whuhrobgk190r09bywy4gi0ef"], ["filename", "test.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 12], ["checksum", "lHP90NiApDwht3eNNIchVw=="], ["created_at", "2025-07-31 18:01:31.667648"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "MultiCallbackDocument"], ["record_id", 5], ["blob_id", 6], ["created_at", "2025-07-31 18:01:31.668854"]]
+  [1m[36mMultiCallbackDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:01:31.669195"], ["id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.3ms) [0m[32mUploaded file to key: if1whuhrobgk190r09bywy4gi0ef (checksum: lHP90NiApDwht3eNNIchVw==)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (0.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 6]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 6]]
+  [1m[36mMultiCallbackDocument Load (0.0ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 5]]
+  [1m[36mMultiCallbackDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:01:31.677142"], ["id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+Running 2 callbacks for MultiCallbackDocument#file
+  [1m[36mActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "documents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2025-07-31 18:05:28.562837', '2025-07-31 18:05:28.562838') RETURNING "key"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTestDocument Create (2.9ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 18:05:28.622497"], ["updated_at", "2025-07-31 18:05:28.622497"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "mfbrqaua6rhz7tr629f43y8qeuf9"], ["filename", "test.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 12], ["checksum", "lHP90NiApDwht3eNNIchVw=="], ["created_at", "2025-07-31 18:05:28.680636"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "TestDocument"], ["record_id", 1], ["blob_id", 1], ["created_at", "2025-07-31 18:05:28.681507"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:05:28.683712"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.4ms) [0m[32mUploaded file to key: mfbrqaua6rhz7tr629f43y8qeuf9 (checksum: lHP90NiApDwht3eNNIchVw==)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (1.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 1]]
+  [1m[36mTestDocument Load (0.0ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 1]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:05:28.711266"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTestDocument Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 18:05:28.723523"], ["updated_at", "2025-07-31 18:05:28.723523"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "TestDocument"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "TestDocument"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "ka2kqhw6xzd2lhp7dmnruuaoaf21"], ["filename", "test.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 15], ["checksum", "xy0EDuH9zYvOCfyLbmxHlA=="], ["created_at", "2025-07-31 18:05:28.737958"]]
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "image"], ["record_type", "TestDocument"], ["record_id", 2], ["blob_id", 2], ["created_at", "2025-07-31 18:05:28.739473"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:05:28.740776"], ["id", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.5ms) [0m[32mUploaded file to key: ka2kqhw6xzd2lhp7dmnruuaoaf21 (checksum: xy0EDuH9zYvOCfyLbmxHlA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 028a6db9-7d62-4490-8f2a-9592ad6cfd79) to Test(default) with arguments: #<GlobalID:0x0000000133b73868 @uri=#<URI::GID gid://test/ActiveStorage::Blob/2>>
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTestDocument Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 18:05:28.777263"], ["updated_at", "2025-07-31 18:05:28.777263"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "TestDocument"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "TestDocument"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "t0zniy6y4d3ocbe1352m2a2wnvs1"], ["filename", "test.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 15], ["checksum", "xy0EDuH9zYvOCfyLbmxHlA=="], ["created_at", "2025-07-31 18:05:28.792974"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "image"], ["record_type", "TestDocument"], ["record_id", 3], ["blob_id", 3], ["created_at", "2025-07-31 18:05:28.793709"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:05:28.794408"], ["id", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.3ms) [0m[32mUploaded file to key: t0zniy6y4d3ocbe1352m2a2wnvs1 (checksum: xy0EDuH9zYvOCfyLbmxHlA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 7fbe746e-df55-4a69-a82d-40f24ea3f32e) to Test(default) with arguments: #<GlobalID:0x000000013339a560 @uri=#<URI::GID gid://test/ActiveStorage::Blob/3>>
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTestDocument Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 18:05:28.804076"], ["updated_at", "2025-07-31 18:05:28.804076"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "690qv4wtww6inklj5kjmv6xfzw72"], ["filename", "first.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 12], ["checksum", "lHP90NiApDwht3eNNIchVw=="], ["created_at", "2025-07-31 18:05:28.813903"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "TestDocument"], ["record_id", 4], ["blob_id", 4], ["created_at", "2025-07-31 18:05:28.814095"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:05:28.814868"], ["id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.3ms) [0m[32mUploaded file to key: 690qv4wtww6inklj5kjmv6xfzw72 (checksum: lHP90NiApDwht3eNNIchVw==)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (0.0ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 4]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 4]]
+  [1m[36mTestDocument Load (0.0ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 4]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:05:28.824476"], ["id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Attachment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 4]]
+  [1m[36mActiveStorage::Blob Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "l5o6g1i5h5dgqhlj4j860ji4h6pz"], ["filename", "second.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 11], ["checksum", "lsFcK7KSEZO/KQ34zYXiug=="], ["created_at", "2025-07-31 18:05:28.835799"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "TestDocument"], ["record_id", 4], ["blob_id", 5], ["created_at", "2025-07-31 18:05:28.837276"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:05:28.837406"], ["id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.3ms) [0m[32mUploaded file to key: l5o6g1i5h5dgqhlj4j860ji4h6pz (checksum: lsFcK7KSEZO/KQ34zYXiug==)[0m
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 59d51b4c-c7db-40be-a1b4-69befaae2522) to Test(default) with arguments: #<GlobalID:0x0000000133b1ae48 @uri=#<URI::GID gid://test/ActiveStorage::Blob/4>>
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (0.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 5]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 5]]
+  [1m[36mTestDocument Load (0.0ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 4]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:05:28.848019"], ["id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mMultiCallbackDocument Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Multi callback test"], ["created_at", "2025-07-31 18:05:28.859176"], ["updated_at", "2025-07-31 18:05:28.859176"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "MultiCallbackDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "MultiCallbackDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "rc8y13m74lox6e9hk5qjty6il50u"], ["filename", "test.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 12], ["checksum", "lHP90NiApDwht3eNNIchVw=="], ["created_at", "2025-07-31 18:05:28.877228"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "MultiCallbackDocument"], ["record_id", 5], ["blob_id", 6], ["created_at", "2025-07-31 18:05:28.878560"]]
+  [1m[36mMultiCallbackDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:05:28.878864"], ["id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.3ms) [0m[32mUploaded file to key: rc8y13m74lox6e9hk5qjty6il50u (checksum: lHP90NiApDwht3eNNIchVw==)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (0.0ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 6]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 6]]
+  [1m[36mMultiCallbackDocument Load (0.0ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 5]]
+  [1m[36mMultiCallbackDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:05:28.887034"], ["id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "documents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2025-07-31 18:08:09.995253', '2025-07-31 18:08:09.995255') RETURNING "key"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTestDocument Create (3.5ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 18:08:10.060616"], ["updated_at", "2025-07-31 18:08:10.060616"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "4dcx1hxonsi3cygc1w6l1zzjv5mn"], ["filename", "test.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 12], ["checksum", "lHP90NiApDwht3eNNIchVw=="], ["created_at", "2025-07-31 18:08:10.119266"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "TestDocument"], ["record_id", 1], ["blob_id", 1], ["created_at", "2025-07-31 18:08:10.120169"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:08:10.122315"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.5ms) [0m[32mUploaded file to key: 4dcx1hxonsi3cygc1w6l1zzjv5mn (checksum: lHP90NiApDwht3eNNIchVw==)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (0.9ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 1]]
+  [1m[36mTestDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 1]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:08:10.149315"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTestDocument Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 18:08:10.162391"], ["updated_at", "2025-07-31 18:08:10.162391"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "TestDocument"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "TestDocument"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "5v75k6kjvqitrtu0uefrtmkxppnl"], ["filename", "test.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 15], ["checksum", "xy0EDuH9zYvOCfyLbmxHlA=="], ["created_at", "2025-07-31 18:08:10.176302"]]
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "image"], ["record_type", "TestDocument"], ["record_id", 2], ["blob_id", 2], ["created_at", "2025-07-31 18:08:10.177786"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:08:10.179063"], ["id", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.5ms) [0m[32mUploaded file to key: 5v75k6kjvqitrtu0uefrtmkxppnl (checksum: xy0EDuH9zYvOCfyLbmxHlA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: ddaec776-6c21-469b-a36b-db0763e1a6bc) to Test(default) with arguments: #<GlobalID:0x000000014567cd20 @uri=#<URI::GID gid://test/ActiveStorage::Blob/2>>
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTestDocument Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 18:08:10.208620"], ["updated_at", "2025-07-31 18:08:10.208620"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "TestDocument"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "TestDocument"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "581c7zmo91e351dlrt718kun2b8n"], ["filename", "test.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 15], ["checksum", "xy0EDuH9zYvOCfyLbmxHlA=="], ["created_at", "2025-07-31 18:08:10.225564"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "image"], ["record_type", "TestDocument"], ["record_id", 3], ["blob_id", 3], ["created_at", "2025-07-31 18:08:10.226469"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:08:10.227289"], ["id", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.4ms) [0m[32mUploaded file to key: 581c7zmo91e351dlrt718kun2b8n (checksum: xy0EDuH9zYvOCfyLbmxHlA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 37f02791-d21d-48d3-83e6-6e598fdae9ba) to Test(default) with arguments: #<GlobalID:0x0000000146056a80 @uri=#<URI::GID gid://test/ActiveStorage::Blob/3>>
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTestDocument Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Document"], ["created_at", "2025-07-31 18:08:10.236979"], ["updated_at", "2025-07-31 18:08:10.236979"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "TestDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "0qdhukh370ocy6n1sserh9rgpwk0"], ["filename", "first.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 12], ["checksum", "lHP90NiApDwht3eNNIchVw=="], ["created_at", "2025-07-31 18:08:10.247520"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "TestDocument"], ["record_id", 4], ["blob_id", 4], ["created_at", "2025-07-31 18:08:10.247722"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:08:10.248486"], ["id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.3ms) [0m[32mUploaded file to key: 0qdhukh370ocy6n1sserh9rgpwk0 (checksum: lHP90NiApDwht3eNNIchVw==)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (0.0ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 4]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 4]]
+  [1m[36mTestDocument Load (0.0ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 4]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:08:10.258163"], ["id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Attachment Destroy (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 4]]
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "ofxmq1erfq9qienek5ebhxkio4ft"], ["filename", "second.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 11], ["checksum", "lsFcK7KSEZO/KQ34zYXiug=="], ["created_at", "2025-07-31 18:08:10.274845"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "TestDocument"], ["record_id", 4], ["blob_id", 5], ["created_at", "2025-07-31 18:08:10.276601"]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:08:10.276976"], ["id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.3ms) [0m[32mUploaded file to key: ofxmq1erfq9qienek5ebhxkio4ft (checksum: lsFcK7KSEZO/KQ34zYXiug==)[0m
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 7ac9cb76-4615-4697-aaa5-a1c06034edce) to Test(default) with arguments: #<GlobalID:0x000000014537c9b8 @uri=#<URI::GID gid://test/ActiveStorage::Blob/4>>
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (0.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 5]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 5]]
+  [1m[36mTestDocument Load (0.0ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 4]]
+  [1m[36mTestDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:08:10.288432"], ["id", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mMultiCallbackDocument Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Multi callback test"], ["created_at", "2025-07-31 18:08:10.300508"], ["updated_at", "2025-07-31 18:08:10.300508"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "MultiCallbackDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "MultiCallbackDocument"], ["name", "file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "77oqwkgkw5v7x1bd7cqofam2kjhi"], ["filename", "test.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 12], ["checksum", "lHP90NiApDwht3eNNIchVw=="], ["created_at", "2025-07-31 18:08:10.318216"]]
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "file"], ["record_type", "MultiCallbackDocument"], ["record_id", 5], ["blob_id", 6], ["created_at", "2025-07-31 18:08:10.319910"]]
+  [1m[36mMultiCallbackDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:08:10.320307"], ["id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.3ms) [0m[32mUploaded file to key: 77oqwkgkw5v7x1bd7cqofam2kjhi (checksum: lHP90NiApDwht3eNNIchVw==)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Update (0.0ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 6]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 6]]
+  [1m[36mMultiCallbackDocument Load (0.0ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 5]]
+  [1m[36mMultiCallbackDocument Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:08:10.327789"], ["id", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mActiveStorage::Attachment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mGallery Create (0.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Gallery"], ["created_at", "2025-07-31 18:08:10.349390"], ["updated_at", "2025-07-31 18:08:10.349390"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 6], ["record_type", "Gallery"], ["name", "photos"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 6], ["record_type", "Gallery"], ["name", "photos"]]
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "jiwhvd0uzdte3dhitczas0tpf15s"], ["filename", "photo1.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 11], ["checksum", "0nwGiDMOwP8FcYLUTkJ60A=="], ["created_at", "2025-07-31 18:08:10.378681"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "photos"], ["record_type", "Gallery"], ["record_id", 6], ["blob_id", 7], ["created_at", "2025-07-31 18:08:10.379488"]]
+  [1m[36mActiveStorage::Blob Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "y84g52nmhvf6j4cg1pkwt6j268l9"], ["filename", "photo2.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 11], ["checksum", "2iSN3pT0uZ8YGYVxQP3v/A=="], ["created_at", "2025-07-31 18:08:10.381133"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "photos"], ["record_type", "Gallery"], ["record_id", 6], ["blob_id", 8], ["created_at", "2025-07-31 18:08:10.381263"]]
+  [1m[36mGallery Update (0.1ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:08:10.382700"], ["id", 6]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.4ms) [0m[32mUploaded file to key: jiwhvd0uzdte3dhitczas0tpf15s (checksum: 0nwGiDMOwP8FcYLUTkJ60A==)[0m
+[36m  Disk Storage (1.0ms) [0m[32mUploaded file to key: y84g52nmhvf6j4cg1pkwt6j268l9 (checksum: 2iSN3pT0uZ8YGYVxQP3v/A==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 51463414-e855-4c09-86fa-709995f4580b) to Test(default) with arguments: #<GlobalID:0x00000001453f5d18 @uri=#<URI::GID gid://test/ActiveStorage::Blob/7>>
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: d7eabdca-d77f-455e-88dc-45e39fde747d) to Test(default) with arguments: #<GlobalID:0x00000001453f43a0 @uri=#<URI::GID gid://test/ActiveStorage::Blob/8>>
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mGallery Create (0.4ms)[0m  [1m[32mINSERT INTO "documents" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Test Gallery"], ["created_at", "2025-07-31 18:08:10.403683"], ["updated_at", "2025-07-31 18:08:10.403683"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 7], ["record_type", "Gallery"], ["name", "photos"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 7], ["record_type", "Gallery"], ["name", "photos"]]
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "4z03zrivxhw75ptlafdrxu7cctkj"], ["filename", "photo1.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 11], ["checksum", "0nwGiDMOwP8FcYLUTkJ60A=="], ["created_at", "2025-07-31 18:08:10.414173"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "photos"], ["record_type", "Gallery"], ["record_id", 7], ["blob_id", 9], ["created_at", "2025-07-31 18:08:10.416067"]]
+  [1m[36mGallery Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:08:10.416487"], ["id", 7]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.3ms) [0m[32mUploaded file to key: 4z03zrivxhw75ptlafdrxu7cctkj (checksum: 0nwGiDMOwP8FcYLUTkJ60A==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: fc12a338-e4ea-4b2b-a9d9-b044cd2eed94) to Test(default) with arguments: #<GlobalID:0x00000001456bff08 @uri=#<URI::GID gid://test/ActiveStorage::Blob/9>>
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 7], ["record_type", "Gallery"], ["name", "photos"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "7p9ef4am6mjtg3q1ougodrp09m4j"], ["filename", "photo2.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 11], ["checksum", "2iSN3pT0uZ8YGYVxQP3v/A=="], ["created_at", "2025-07-31 18:08:10.423269"]]
+  [1m[36mActiveStorage::Attachment Create (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "photos"], ["record_type", "Gallery"], ["record_id", 7], ["blob_id", 10], ["created_at", "2025-07-31 18:08:10.423638"]]
+  [1m[36mGallery Update (0.0ms)[0m  [1m[33mUPDATE "documents" SET "updated_at" = ? WHERE "documents"."id" = ?[0m  [["updated_at", "2025-07-31 18:08:10.423766"], ["id", 7]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+[36m  Disk Storage (0.3ms) [0m[32mUploaded file to key: 7p9ef4am6mjtg3q1ougodrp09m4j (checksum: 2iSN3pT0uZ8YGYVxQP3v/A==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 7625a032-a6e5-49b6-96c7-07ae7ca42916) to Test(default) with arguments: #<GlobalID:0x0000000146050f40 @uri=#<URI::GID gid://test/ActiveStorage::Blob/10>>
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_attachments[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM active_storage_blobs[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM documents[0m
