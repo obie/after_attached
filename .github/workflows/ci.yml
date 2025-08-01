@@ -22,7 +22,12 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby-version }}
-        bundler-cache: true
+        bundler-cache: false
+        
+    - name: Install dependencies
+      run: |
+        gem install bundler
+        bundle install
         
     - name: Override Rails version
       run: |
