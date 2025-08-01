@@ -1,3 +1,5 @@
+inherit_from: []
+
 AllCops:
   TargetRubyVersion: 3.0
   NewCops: enable
