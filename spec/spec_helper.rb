@@ -4,6 +4,7 @@ require "bundler/setup"
 
 ENV["RAILS_ENV"] = "test"
 
+require "logger"
 require "rails"
 require "active_record"
 require "active_support/core_ext/string"
