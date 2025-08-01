@@ -31,12 +31,18 @@ jobs:
         
     - name: Override Rails version
       run: |
-        # Create a temporary Gemfile without the rails gem
-        grep -v '^gem "rails"' Gemfile > Gemfile.tmp
+        # Create a temporary Gemfile without the rails and sqlite3 gems
+        grep -v '^gem "rails"\|^gem "sqlite3"' Gemfile > Gemfile.tmp
         mv Gemfile.tmp Gemfile
         # Add the specific Rails version
         echo "gem 'rails', '~> ${{ matrix.rails-version }}'" >> Gemfile
-        bundle update rails activestorage activesupport activerecord
+        # Add appropriate sqlite3 version based on Rails version
+        if [[ "${{ matrix.rails-version }}" == "6.1" || "${{ matrix.rails-version }}" == "7.0" ]]; then
+          echo "gem 'sqlite3', '~> 1.4'" >> Gemfile
+        else
+          echo "gem 'sqlite3', '~> 2.1'" >> Gemfile
+        fi
+        bundle update rails activestorage activesupport activerecord sqlite3
         
     - name: Run tests
       run: bundle exec rspec
