@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    after_attached (0.2.0)
+    after_attached (0.1.1)
       activestorage (>= 6.0)
       activesupport (>= 6.0)
 
